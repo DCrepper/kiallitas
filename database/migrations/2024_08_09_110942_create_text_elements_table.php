@@ -22,16 +22,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('elements', function (Blueprint $table) {
+        Schema::create('text_elements', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->enum('status', ['video', 'image']);
-            $table->string('image_from_disc')->nullable();
-            $table->string('image_text')->nullable();
-            $table->string('video_from_disc')->nullable();
+            $table->string('text');
             $table->integer('possition')->default(0);
             $table->boolean('is_active')->default(true);
-            $table->integer('slide_length')->default(5)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

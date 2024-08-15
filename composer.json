@@ -12,8 +12,9 @@
         "laravel/reverb": "^1.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
-        "livewire/volt": "^1.0",
-        "pusher/pusher-php-server": "^7.2"
+        "livewire/volt": "^1.6",
+        "pusher/pusher-php-server": "^7.2",
+        "tomatophp/filament-media-manager": "^1.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.1",

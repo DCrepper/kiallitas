@@ -35,26 +35,28 @@ class ElementResource extends Resource
                         'video' => 'Video',
                         'image' => 'Image',
                     ])->rules(['required'])->required()->live(),
-                Toggle::make('local')->live()->visible(fn (Get $get): bool => $get('status')=="image"?true:false)
-                ->onIcon('heroicon-m-bolt')
-                ->offIcon('heroicon-m-user'),
-
-                FileUpload::make('image_from_disc')->visible(fn (Get $get): bool => $get('local'))->image()
+                FileUpload::make('image_from_disc')
+                ->visible(fn (Get $get): bool =>  $get('status')=='image')
+                ->image()
                 ->imageEditor()
                 ->imageEditorAspectRatios([
                     '16:9',
                     '4:3',
                     '1:1',
                 ]),
-                TextInput::make('image_from_url')->visible(fn (Get $get): bool => (!$get('local')&& $get('status')=='image') ?true:false),
-                TextInput::make('video_url')->visible(fn (Get $get): bool => $get('status')=="video"?true:false),
-                TextInput::make('possition')->type('number')->rules(['required','unique:elements,possition']),
+                TextInput::make('image_text')
+                ->visible(fn (Get $get): bool =>  $get('status')=='image'),
+                FileUpload::make('video_from_disc')
+                ->visible(fn (Get $get): bool => $get('status')=="video")
+                ->preserveFilenames(),
+                TextInput::make('possition')->type('number')->rules(['required']),
+                TextInput::make('slide_length')->type('number')->rules(['required']),
                 Toggle::make('is_active')->live()
                 ->onIcon('heroicon-m-bolt')
                 ->offIcon('heroicon-m-user')
             ]);
     }
-
+/* <iframe width="1278" height="719" src="https://www.youtube.com/embed/1VoVo7P6Vcs" title="Casati - Design Műhely" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> */
     public static function table(Table $table): Table
     {
         return $table
@@ -64,10 +66,7 @@ class ElementResource extends Resource
                     ->options([
                         'video' => 'Video',
                         'image' => 'Image',
-                    ])->rules(['required']),
-                ToggleColumn::make('local'),
-                TextColumn::make('image_from_url'),
-                TextColumn::make('video_url'),
+                    ]),
                 TextInputColumn::make('possition')->type('number')->rules(['required','unique:elements,possition']),
                 ToggleColumn::make('is_active')
             ])
