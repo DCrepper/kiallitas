@@ -35,7 +35,7 @@ mount(function () {
         <div class="swiper-wrapper">
             @foreach ($slider_elements as $element)
                 <div class="swiper-slide"
-                    @if ($element->status == 'video') data-swiper-autoplay="{{ $element->slide_length }}" @endif>
+                     data-swiper-autoplay="{{ $element->slide_length }}">
                     <div class="swiper-slide-content">
 
                         @if ($element->status == 'video')
