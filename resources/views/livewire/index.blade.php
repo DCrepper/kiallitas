@@ -9,8 +9,9 @@ mount(function () {
 });
 
 ?>
-<style>  .marquee {
-    width: 450px;
+<style>
+.marquee {
+    width: 100%;
     line-height: 50px;
     background-color: red;
     color: white;
