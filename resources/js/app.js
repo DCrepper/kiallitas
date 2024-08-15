@@ -13,6 +13,7 @@ const swiper = new Swiper(".swiper", {
     modules: [Navigation, Pagination,Autoplay],
     direction: "horizontal",
     loop: true,
+    autoHeight: false,
     height: 500,
     spaceBetween: 30,
     centeredSlides: true,
