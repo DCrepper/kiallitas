@@ -83,10 +83,6 @@ namespace App\Models{
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \TomatoPHP\FilamentMediaManager\Models\Folder> $folders
- * @property-read int|null $folders_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \TomatoPHP\FilamentMediaManager\Models\Folder> $myFolders
- * @property-read int|null $my_folders_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
  * @method static \Database\Factories\UserFactory factory($count = null, $state = [])

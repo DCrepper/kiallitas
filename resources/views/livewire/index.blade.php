@@ -4,8 +4,8 @@ use App\Models\Element;
 use App\Models\TextElement;
 state(['slider_elements' => [], 'textElements' => []]);
 mount(function () {
-    $this->slider_elements = Element::where('is_active', '1')->orderBy('position', 'asc')->get();
-    $this->textElements = TextElement::where('is_active', '1')->orderBy('position', 'asc')->get();
+    $this->slider_elements = Element::where('is_active', '1')->orderBy('possition', 'asc')->get();
+    $this->textElements = TextElement::where('is_active', '1')->orderBy('possition', 'asc')->get();
 });
 
 ?>
