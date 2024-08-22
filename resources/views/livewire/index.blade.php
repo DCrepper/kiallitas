@@ -31,7 +31,7 @@ mount(function () {
 </style>
 <div>
     <!-- Slider main container -->
-    <div class="swiper w-[1920px] h-[1080]">
+    <div class="swiper w-[1920px] h-[1080px]">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             @foreach ($slider_elements as $element)
@@ -40,7 +40,7 @@ mount(function () {
                     <div class="swiper-slide-content">
 
                         @if ($element->status == 'video')
-                            <video class="object-cover w-[1920px] h-[1080px]" playsinline autoplay="true" muted="true">
+                            <video class="object-cover w-full h-full" playsinline autoplay="true" muted="true">
                                 <source src="{{ asset('storage/' . $element->video_from_disc) }}" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
