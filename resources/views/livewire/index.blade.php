@@ -22,7 +22,7 @@ mount(function () {
 .marquee p {
     display: inline-block;
     padding-left: 100%;
-    animation: marquee {{ TextElement::where('is_active', '1')->orderBy('possition', 'asc')->get()->count()*4 }}s linear infinite;
+    animation: marquee {{ TextElement::where('is_active', '1')->orderBy('possition', 'asc')->get()->count()*8 }}s linear infinite;
 }
 @keyframes marquee {
     0%   { transform: translate(0, 0); }
