@@ -13,7 +13,7 @@ mount(function () {
 .marquee {
     width: 100%;
     line-height: 50px;
-    background-color: red;
+    background-color: #21B99B;
     color: white;
     white-space: nowrap;
     overflow: hidden;
@@ -31,7 +31,7 @@ mount(function () {
 </style>
 <div>
     <!-- Slider main container -->
-    <div class="swiper h-[500px]">
+    <div class="swiper h-[1920px]">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             @foreach ($slider_elements as $element)
