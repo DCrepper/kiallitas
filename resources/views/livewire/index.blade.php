@@ -22,7 +22,7 @@ mount(function () {
 .marquee p {
     display: inline-block;
     padding-left: 100%;
-    animation: marquee {{ TextElement::where('is_active', '1')->orderBy('possition', 'asc')->get()->count()*2 }}s linear infinite;
+    animation: marquee {{ TextElement::where('is_active', '1')->orderBy('possition', 'asc')->get()->count()*4 }}s linear infinite;
 }
 @keyframes marquee {
     0%   { transform: translate(0, 0); }
@@ -40,7 +40,7 @@ mount(function () {
                     <div class="swiper-slide-content">
 
                         @if ($element->status == 'video')
-                            <video class="object-cover w-full h-96" playsinline autoplay="true" muted="true">
+                            <video class="object-cover h-[1920px] w-[1080px]" playsinline autoplay="true" muted="true">
                                 <source src="{{ asset('storage/' . $element->video_from_disc) }}" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
