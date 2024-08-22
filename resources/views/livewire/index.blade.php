@@ -31,7 +31,7 @@ mount(function () {
 </style>
 <div>
     <!-- Slider main container -->
-    <div class="swiper w-[1920px] h-[1080px]">
+    <div class="swiper w-[1900px] h-[1080px]">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             @foreach ($slider_elements as $element)
