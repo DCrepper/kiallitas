@@ -12,7 +12,7 @@ mount(function () {
 <style>
 .marquee {
     width: 100%;
-    line-height: 50px;
+    line-height: 70px;
     background-color: #21B99B;
     color: white;
     white-space: nowrap;
@@ -77,7 +77,7 @@ mount(function () {
     </div>
 
     <section class="marquee">
-        <p class="loop-text">
+        <p class="loop-text text-3xl">
             @foreach ($textElements as $textElement)
                 {{ $textElement->text }}
             @endforeach
